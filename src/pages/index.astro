@@ -1,0 +1,134 @@
+---
+import { getImage } from "astro:assets";
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ShowGameProjects from "../components/ShowGameProjects.astro";
+import bgImage from "../assets/bg.jpg";
+import placeHolder from "../assets/placeholder.jpg";
+
+const bg = await getImage({ src: bgImage });
+const pageTitle = "John Smith";
+
+// console.log("Projects : ", projects);
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <!-- Name and Headline -->
+    <div
+        class="bg-origin-border md:bg-fixed lg:bg-fixed bg-cover bg-scroll bg-center min-h-screen flex justify-center items-center text-center text-darkCyan-50"
+        style={`background-image: url('${bg.src}');`}
+    >
+        <figure
+            class="p-8 bg-opacity-95 rounded-md bg-darkCyan-800 max-w-xs md:max-w-md lg:max-w-lg mx-auto"
+        >
+            <Image
+                class="rounded-full mx-auto size-44 my-2"
+                src={placeHolder}
+                alt="John Smith"
+                loading="eager"
+            />
+            <h1 class="md:text-6xl text-4xl font-bold">John Smith</h1>
+            <div class="border-t my-4 border-darkCyan-300">
+                <p class="md:text-xl text-md my-4 text-white">
+                    <a
+                        href="/projects/game-projects/"
+                        class="transition-all hover:text-darkCyan-200 hover:underline"
+                        >Game Developer</a
+                    >
+                </p>
+            </div>
+        </figure>
+    </div>
+
+    <!-- About & Contact -->
+    <div
+        class="grid md:grid-cols-2 grid-cols-1 gap-12 text-center lg:text-left my-24 md:mx-48 lg:mx-36 mx-16 text-darkCyan-50"
+    >
+        <div>
+            <h2 class="text-4xl md:text-6xl font-bold">
+                <span class="icon-[fa6-solid--user-large]"></span>
+                About
+            </h2>
+            <p class="text-md md:text-lg my-4">
+                Enim ipsum fugiat velit sint. Occaecat sint reprehenderit
+                commodo ut sunt. Ex irure Lorem ad ut mollit incididunt laborum
+                eiusmod. Cupidatat commodo cupidatat aliqua sint nulla eu tempor
+                sint ullamco reprehenderit. Adipisicing mollit Lorem proident in
+                incididunt et deserunt consectetur duis deserunt. Commodo culpa
+                commodo in ullamco exercitation in.
+                <br /><br />
+                Ullamco deserunt ex anim ad ex. Amet occaecat dolor exercitation
+                nulla esse elit labore anim. Minim ea ullamco irure ad et adipisicing.
+                Est aliqua labore mollit velit elit do sint laboris dolor non pariatur
+                commodo magna. Amet ullamco esse aute officia cupidatat minim. Velit
+                anim do duis adipisicing sit laborum dolore.
+            </p>
+        </div>
+        <div>
+            <h2 class="text-4xl md:text-6xl font-bold">
+                <span class="icon-[fa6-solid--address-card]"></span>
+                Contact
+            </h2>
+            <p class="text-md md:text-lg my-4">
+                You can email me at
+                <a
+                    href="/"
+                    class="text-darkCyan-200 hover:text-darkCyan-50 transition-colors underline"
+                    >john.smith@email.com</a
+                >
+                <br />
+                or if you want to connect via my Socials:
+            </p>
+            <div
+                class="flex flex-row md:justify-normal justify-center md:items-start items-center gap-x-10 border-darkCyan-300"
+            >
+                <button
+                    class="md:text-lg text-base md:text-left text-center my-4 rounded-md p-2 bg-darkCyan-800 hover:bg-darkCyan-900 transition-colors"
+                >
+                    <a
+                        href="https://www.twitter.com/"
+                        target="_blank"
+                    >
+                        <span class="icon-[fa6-brands--twitter] md:mx-1 mx-0"
+                        ></span>
+                        Twitter
+                    </a>
+                </button>
+                <button
+                    class="md:text-lg text-base md:text-left text-center my-4 rounded-md p-2 bg-darkCyan-800 hover:bg-darkCyan-900 transition-colors"
+                >
+                    <a
+                        href="https://www.linkedin.com/             "
+                        target="_blank"
+                    >
+                        <span class="icon-[fa6-brands--linkedin] md:mx-1 mx-0"
+                        ></span>
+                        LinkedIn
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--Projects -->
+    <div
+        class="text-center lg:text-left md:mx-48 lg:mx-36 mx-16 text-darkCyan-50"
+    >
+        <h2 class="md:text-6xl text-4xl font-bold">
+            <span class="icon-[fa6-solid--star]"></span>
+            Featured Game Projects
+        </h2>
+        <ShowGameProjects filter="true" />
+        <div>
+            <button class="mt-8">
+                <a
+                    href="/projects/game-projects/"
+                    class="rounded-md p-2 bg-darkCyan-800 hover:bg-darkCyan-900 transition-colors"
+                >
+                    <span class="icon-[fa6-solid--gamepad] mx-1"></span>
+                    More Projects
+                </a>
+            </button>
+        </div>
+    </div>
+</BaseLayout>

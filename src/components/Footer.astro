@@ -1,0 +1,76 @@
+---
+//Edit with your personal links
+const socials = [
+    'https://www.twitter.com/',
+    'https://www.linkedin.com/',
+    'https://www.instagram.com/',
+    'https://itch.io/'
+]
+---
+
+<footer class="py-16 border-t border-darkCyan-400 mt-32">
+    <div class="container mx-auto px-36 text-center md:text-left">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-2">
+            <!--Copyright and Tech stack info -->
+            <div class="col-span-4 md:col-span-3">
+                <p class="text-darkCyan-200 text-center lg:text-left">
+                    © 2024 John Smith | Powered by <a
+                        href="https://astro.build/"
+                        target="_blank"
+                        class="underline hover:text-darkCyan-50 transition-all"
+                        >Astro</a
+                    >, <a
+                        href="https://iconify.design/"
+                        target="_blank"
+                        class="underline hover:text-darkCyan-50 transition-all"
+                        >Iconify</a
+                    > & <a
+                        href="https://tailwindcss.com/"
+                        target="_blank"
+                        class="underline hover:text-darkCyan-50 transition-all"
+                        >TailwindCSS</a>
+                </p>
+            </div>
+            <!--Socials -->
+            <div class="col-span-4 lg:col-span-2 text-center lg:text-right">
+                <h3 class="text-darkCyan-100 font-bold md:text-lg text-base">Socials</h3>
+                <nav
+                    class="text-darkCyan-500 text-3xl lg:text-xl md:text-2xl space-x-2"
+                >                
+                    <!--Twitter -->
+                    <a
+                        href={socials.at(0)}
+                        target="_blank"
+                        aria-label="Twitter"
+                        class="text-darkCyan-200 hover:text-darkCyan-50 hover:underline transition-all"
+                        ><span class="icon-[fa6-brands--twitter]"></span></a
+                    >
+                    <!--LinkedIn -->
+                    <a
+                        href={socials.at(1)}
+                        target="_blank"
+                        aria-label="LinkedIn"
+                        class="text-darkCyan-200 hover:text-darkCyan-50 hover:underline transition-all"
+                        ><span class="icon-[fa6-brands--linkedin]"></span></a
+                    >
+                    <!--Instagram -->
+                    <a
+                        href={socials.at(2)}
+                        target="_blank"
+                        aria-label="Instagram"
+                        class="text-darkCyan-200 hover:text-darkCyan-50 hover:underline transition-all"
+                        ><span class="icon-[fa6-brands--instagram]"></span></a
+                    >
+                    <!--Itch.io -->
+                    <a
+                        href={socials.at(3)}
+                        target="_blank"
+                        aria-label="Itch.io"
+                        class="text-darkCyan-200 hover:text-darkCyan-50 hover:underline transition-all"
+                        ><span class="icon-[fa6-brands--itch-io]"></span></a
+                    >
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,35 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<!--Note: two different titles present to control <title> and <h2> -->
+<BaseLayout pageTitle={frontmatter.pageTitle}>
+    <article class="md:mx-48 mx-16 md:mt-56 mt-36 text-white">
+        <div class="flex md:items-start md:justify-normal items-center justify-center my-8">
+            <button>
+                <a href="/projects/game-projects/" class="text-lg md:rounded-full rounded-lg p-4 bg-darkCyan-800 hover:bg-darkCyan-900 transition-colors">
+                    <span class="icon-[fa6-solid--arrow-left-long] mx-1"></span>
+                    Back to Game Projects
+                </a>
+            </button>
+        </div>
+        <div class="text-center">
+            <h2 class="md:text-6xl text-5xl font-bold my-8">{frontmatter.gameTitle}</h2>
+            <time class="text-xl" datetime={frontmatter.date.toISOString()}>
+                {
+                    frontmatter.date.toLocaleDateString("en-GB", {
+                        dateStyle: "medium",
+                        timeZone: "UTC",
+                    })
+                }
+            </time>
+        </div>
+        <div class="border-t border-darkCyan-300 border-2 my-12"></div>
+        <div
+            class="text-center md:text-lg text-base md:text-left prose prose-invert prose-xl marker:text-white prose-p:text-darkCyan-50 prose-h1:text-darkCyan-50 prose-li:text-darkCyan-50 prose-a:text-darkCyan-200 prose-a:hover:text-darkCyan-50 max-w-none"
+        >
+            <slot />
+        </div>
+    </article>
+</BaseLayout>

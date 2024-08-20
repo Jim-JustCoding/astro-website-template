@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+    project: CollectionEntry<"projects">;
+};
+
+const { project } = Astro.props;
+const { gameTitle, description, date } = project.data;
+---
+
+<article
+    class="mt-8 md:max-w-xs max-w-sm border-2 border-transparent shadow-md shadow-darkCyan-800 rounded-md p-4 bg-darkCyan-100 grid items-start gap-4"
+>
+    <div>
+        <h2 class="text-darkCyan-800 text-xl font-bold">{gameTitle}</h2>
+        <div class="text-darkCyan-800">
+            <time datetime={date.toISOString()}>
+                {
+                    date.toLocaleDateString("en-GB", {
+                        dateStyle: "medium",
+                        timeZone: "UTC",
+                    })
+                }
+            </time>
+        </div>
+    </div>
+    <p class="text-darkCyan-600 grid">{description}</p>
+    <div class="align-middle lg:align-baseline">
+        <a
+        class="max-w-xl text-white bg-darkCyan-600 p-2 rounded-md hover:bg-darkCyan-800 transition-colors"
+        href={`/projects/${project.slug}`}>Read More</a
+        >
+    </div>
+</article>

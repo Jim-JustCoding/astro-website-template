@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import ShowGameProjects from "../../components/ShowGameProjects.astro"
+const pageTitle = "Jim Ouk - Games Portfolio"
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="md:mt-56 mt-36 text-center md:mx-48 lg:mx-36 mx-16 text-cyan-100">
+        <h1 class="text-6xl font-bold">Games Projects</h1>
+    </div>
+    <div class="border-t-2 my-12 md:mx-48 lg:mx-36 mx-16 border-darkCyan-300"></div>
+    <div class="md:mx-48 lg:mx-36 mx-16">
+       <ShowGameProjects />
+    </div>
+</BaseLayout>

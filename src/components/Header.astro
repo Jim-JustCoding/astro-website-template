@@ -1,0 +1,23 @@
+---
+const navItems = [
+  { href: "/projects/game-projects/", label: "Game Projects" },
+];
+---
+
+<header class="md:fixed relative top-0 left-0 right-0 drop-shadow-md z-50">
+  <div class="md:p-6 md:m-6 p-6 bg-darkCyan-800 max-w-full md:rounded-full rounded-b-lg text-darkCyan-50">
+    <!--Website Logo/Name -->
+    <div class="flex flex-col md:flex-row justify-center md:justify-between items-center flex-wrap space-y-4 md:space-y-0">
+      <a href="/" class="text-2xl transition-colors hover:text-darkCyan-200">John Smith</a>
+      <!--Nav Items -->
+      <nav class="flex-col flex md:flex-row space-x-0  md:space-x-5 space-y-2 md:space-y-0 items-center">
+        <a href="/" class="font-bold transition-colors p-3 md:rounded-full rounded-lg hover:text-darkCyan-200 hover:bg-darkCyan-900 hover:underline">Home</a>
+        {navItems.map((item) => (
+          <a href={item.href} class="font-bold transition-colors p-3 md:rounded-full rounded-lg hover:text-darkCyan-200 hover:bg-darkCyan-900 hover:underline">
+            {item.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </div>
+</header>

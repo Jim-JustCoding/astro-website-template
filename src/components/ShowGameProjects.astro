@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import ProjectCard from "./ProjectCard.astro"
+let projects = await getCollection("projects");
+const { filter } = Astro.props;
+
+//If filterTag is not null; only show projects with the tag 'featured'
+if (filter) {
+    projects = projects.filter((projects) => projects.data.tags.includes('featured'));
+}
+---
+
+<div class="text-center lg:text-left text-darkCyan-50">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {projects.map((p) => <ProjectCard project={p} /> )}
+    </div>
+</div>
