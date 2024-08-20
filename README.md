@@ -1,5 +1,9 @@
 # Astro Template
 
+[![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+
 This is a template of my portfolio website, which I initally created from scratch using [Astro](https://astro.build/), [Iconify](https://iconify.design/) and [TailwindCSS](https://tailwindcss.com/).
 
 To see a preview of this template, check out my [personal portfolio website](https://jimmyouk.com).
